@@ -9,6 +9,7 @@ using NUnit.Framework;
 namespace Tests
 {
     [Parallelizable(ParallelScope.All)]
+    [TestFixture("Chrome")]
     public class CompanyTest : DriverImplementation
     {
         [ThreadStatic] private static LoginPage loginPage;
@@ -16,6 +17,10 @@ namespace Tests
         [ThreadStatic] private static HeaderPanel headerPanel;
         [ThreadStatic] private static DashboardPage _dashboardPage;
         [ThreadStatic] private static CompanyPage companyPage;
+
+        public CompanyTest(string browser) : base(browser)
+        {
+        }
 
         [SetUp]
         public void SetUp()
@@ -45,7 +50,7 @@ namespace Tests
         {
             var model = CompanyModel.GenerateCompany();
             Login();
-/*            headerPanel.clickaddNewLead();
+            headerPanel.clickaddNewLead();
             SetCompanyDetails(model);
             SetCompanyContact(model);
             _addNewLead.ClickSaveGoTo();
@@ -58,7 +63,7 @@ namespace Tests
             Assert.AreEqual(model.City, model2.City, "City is not same that expected");
             Assert.AreEqual(model.Name, model2.Name, "Name is not same that expected");
             Assert.AreEqual(model.Street, model2.Street, "Street is not same that expected");
-            Assert.AreEqual(model.Region, model2.Region, "Region is not same that expected");*/
+            Assert.AreEqual(model.Region, model2.Region, "Region is not same that expected");
         }
 
 
@@ -111,5 +116,7 @@ namespace Tests
             //companyPage.EditMr("Sir");
             companyPage.EditFirstName(model.Name);
         }
+
+
     }
 }

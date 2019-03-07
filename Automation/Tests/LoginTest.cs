@@ -7,16 +7,21 @@ using NUnit.Framework;
 namespace Tests
 {
     [Parallelizable(ParallelScope.All)]
+    [TestFixture("Firefox")]
     public class LoginTest : DriverImplementation
     {
         [ThreadStatic]private static LoginPage loginPage;
+
+        public LoginTest(string browser) : base(browser)
+        {
+        }
 
         [SetUp]
         public void SetUp()
         {
             loginPage = new LoginPage();
         }
-
+        
 
         [Test]
         public void IncorrectLogin()
@@ -45,5 +50,6 @@ namespace Tests
             var actualErrorMessage = loginPage.GetErrorMessageText();
             Assert.AreEqual(actualErrorMessage, "lox", "Error message is not same that expected");
         }
+
     }
 }

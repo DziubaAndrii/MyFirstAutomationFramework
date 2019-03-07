@@ -1,7 +1,9 @@
-﻿using System.Threading;
+﻿using System;
+using System.Threading;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Firefox;
 
 namespace AutomationFramework
 {
@@ -10,22 +12,31 @@ namespace AutomationFramework
     {
         public static ThreadLocal<IWebDriver> driver = new ThreadLocal<IWebDriver>();
         public static IWebDriver Driver => driver.Value;
+        public string BrowserName;
 
+        public DriverImplementation(string browser)
+        {
+            this.BrowserName = browser;
+        }
 
         [SetUp]
-        public static void SetUp()
+        public void SetUp()
         {
             InitBrowser();
             OpenHomePage();
         }
 
-        public static void InitBrowser()
+        public void InitBrowser()
         {
-            //Add other browser drivers
-            driver.Value = new ChromeDriver(@"D:\project\Automation\Drivers");
+            if (BrowserName.Equals("Chrome"))
+            {
+                driver.Value = new ChromeDriver(@"D:\MainProjects\MyFirstAutomationFramework\Automation\Drivers");
+            }
+            else if (BrowserName.Equals("Firefox"))
+            {
+                driver.Value = new FirefoxDriver(@"D:\MainProjects\MyFirstAutomationFramework\Automation\Drivers");
+            }
             Driver.Manage().Window.Maximize();
-            //driver = new FirefoxDriver(@"D:\project\Automation\Drivers");
-            //driver.Manage().Window.Maximize();
             // driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
         }
 
@@ -35,7 +46,7 @@ namespace AutomationFramework
         }
 
         [TearDown]
-        public static void CloseBrowser()
+        public void CloseBrowser()
         {
             ExtentReport.GenerateReport();
             Driver.Close();
