@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AutomationFramework.Components.Helpers
+namespace Framework.Components.Helpers
 {
     public static class Helpers
     {

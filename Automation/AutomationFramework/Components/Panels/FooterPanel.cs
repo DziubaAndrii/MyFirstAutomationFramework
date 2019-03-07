@@ -1,7 +1,7 @@
 ﻿using AutomationFramework.Components.Pages;
-using AutomationFramework.Pages;
+using Framework.Components.Pages;
 
-namespace AutomationFramework.Components.Panels
+namespace Framework.Components.Panels
 {
     public class FooterPanel : BasePage
     {

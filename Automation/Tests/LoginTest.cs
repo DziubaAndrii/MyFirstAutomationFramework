@@ -1,12 +1,15 @@
-﻿using AutomationFramework;
-using AutomationFramework.Pages;
+﻿using System;
+using AutomationFramework;
+using Framework;
+using Framework.Components.Pages;
 using NUnit.Framework;
 
 namespace Tests
 {
+    [Parallelizable(ParallelScope.All)]
     public class LoginTest : DriverImplementation
     {
-        private LoginPage loginPage;
+        [ThreadStatic]private static LoginPage loginPage;
 
         [SetUp]
         public void SetUp()
@@ -39,7 +42,8 @@ namespace Tests
             loginPage.SetUserName(userName);
             loginPage.SetPassword(password);
             loginPage.ClickLogin();
-
+            var actualErrorMessage = loginPage.GetErrorMessageText();
+            Assert.AreEqual(actualErrorMessage, "lox", "Error message is not same that expected");
         }
     }
 }

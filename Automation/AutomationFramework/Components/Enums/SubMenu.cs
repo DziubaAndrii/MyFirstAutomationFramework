@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace AutomationFramework.Components.Enums
+﻿namespace Framework.Components.Enums
 {
         public enum MainMenu
         {

@@ -1,18 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Threading;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Firefox;
 
 namespace AutomationFramework
 {
     [TestFixture]
     public class DriverImplementation
     {
-        public static IWebDriver driver;
-        
+        public static ThreadLocal<IWebDriver> driver = new ThreadLocal<IWebDriver>();
+        public static IWebDriver Driver => driver.Value;
 
 
         [SetUp]
@@ -25,8 +22,8 @@ namespace AutomationFramework
         public static void InitBrowser()
         {
             //Add other browser drivers
-            driver = new ChromeDriver(@"D:\project\Automation\Drivers");
-            driver.Manage().Window.Maximize();
+            driver.Value = new ChromeDriver(@"D:\project\Automation\Drivers");
+            Driver.Manage().Window.Maximize();
             //driver = new FirefoxDriver(@"D:\project\Automation\Drivers");
             //driver.Manage().Window.Maximize();
             // driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
@@ -34,13 +31,14 @@ namespace AutomationFramework
 
         public static void OpenHomePage()
         {
-            driver.Navigate().GoToUrl("https://fxdb2webauto.monexdev.net/Account/Login.aspx");
+            Driver.Navigate().GoToUrl("https://fxdb2webauto.monexdev.net/Account/Login.aspx");
         }
 
-        [OneTimeTearDown]
+        [TearDown]
         public static void CloseBrowser()
         {
-            driver.Close();
+            ExtentReport.GenerateReport();
+            Driver.Close();
         }
     }
 }

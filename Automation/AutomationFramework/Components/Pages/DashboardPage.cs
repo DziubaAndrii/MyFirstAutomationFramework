@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
-using AutomationFramework.Components.Panels;
+﻿using AutomationFramework.Components.Pages;
+using Framework.Components.Panels;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
 
-namespace AutomationFramework.Components.Pages
+namespace Framework.Components.Pages
 {
     public class DashboardPage : BasePage
     {

@@ -2,7 +2,7 @@
 
 using System.ComponentModel;
 
-namespace AutomationFramework.Components.Enums
+namespace Framework.Components.Enums
 {
     public enum TopMenu
     {

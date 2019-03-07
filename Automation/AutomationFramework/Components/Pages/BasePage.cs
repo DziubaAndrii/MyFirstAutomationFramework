@@ -2,7 +2,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.PageObjects;
-using SeleniumExtras.WaitHelpers;
+using ExpectedConditions = SeleniumExtras.WaitHelpers.ExpectedConditions;
 
 namespace AutomationFramework.Components.Pages
 {
@@ -13,8 +13,8 @@ namespace AutomationFramework.Components.Pages
 
         protected BasePage()
         {
-            this.webDriver = DriverImplementation.driver;
-            PageFactory.InitElements(webDriver, (object)this);
+            this.webDriver = DriverImplementation.Driver;
+            PageFactory.InitElements(webDriver, this);
         }
 
         public void WaitForElementIsVisible(int seconds, By by)

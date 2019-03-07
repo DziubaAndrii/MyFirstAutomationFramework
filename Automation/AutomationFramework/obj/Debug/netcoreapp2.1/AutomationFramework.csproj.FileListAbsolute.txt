@@ -1,9 +1,0 @@
-D:\project\Automation\AutomationFramework\bin\Debug\netcoreapp2.1\AutomationFramework.deps.json
-D:\project\Automation\AutomationFramework\bin\Debug\netcoreapp2.1\AutomationFramework.dll
-D:\project\Automation\AutomationFramework\bin\Debug\netcoreapp2.1\AutomationFramework.pdb
-D:\project\Automation\AutomationFramework\obj\Debug\netcoreapp2.1\AutomationFramework.csprojAssemblyReference.cache
-D:\project\Automation\AutomationFramework\obj\Debug\netcoreapp2.1\AutomationFramework.csproj.CoreCompileInputs.cache
-D:\project\Automation\AutomationFramework\obj\Debug\netcoreapp2.1\AutomationFramework.AssemblyInfoInputs.cache
-D:\project\Automation\AutomationFramework\obj\Debug\netcoreapp2.1\AutomationFramework.AssemblyInfo.cs
-D:\project\Automation\AutomationFramework\obj\Debug\netcoreapp2.1\AutomationFramework.dll
-D:\project\Automation\AutomationFramework\obj\Debug\netcoreapp2.1\AutomationFramework.pdb

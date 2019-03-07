@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using AutomationFramework.Components.Models;
-using AutomationFramework.Pages;
+﻿using System.Collections.Generic;
+using AutomationFramework.Components.Pages;
+using Framework.Components.Models;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
 
-namespace AutomationFramework.Components.Pages
+namespace Framework.Components.Pages
 {
     public class CompanyPage : BasePage
 

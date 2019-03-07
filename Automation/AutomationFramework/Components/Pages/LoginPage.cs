@@ -1,10 +1,8 @@
-﻿
-
-using AutomationFramework.Components.Pages;
+﻿using AutomationFramework.Components.Pages;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
 
-namespace AutomationFramework.Pages
+namespace Framework.Components.Pages
 {
     public class LoginPage : BasePage
     {

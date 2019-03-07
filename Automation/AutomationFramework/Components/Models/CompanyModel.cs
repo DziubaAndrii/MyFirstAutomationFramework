@@ -1,4 +1,4 @@
-﻿namespace AutomationFramework.Components.Models
+﻿namespace Framework.Components.Models
 {
    public  class CompanyModel
    {
