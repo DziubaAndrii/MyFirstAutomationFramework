@@ -18,7 +18,7 @@ namespace AutomationFramework
         public static void GenerateReport()
         {
                 // initialize the HtmlReporter
-                var htmlReporter = new ExtentHtmlReporter(($"D:\\MainProjects\\MyFirstAutomationFramework\\Automation\\Tests\\Report\\ExtentScreenshot.html"));
+                var htmlReporter = new ExtentHtmlReporter(($"C:\\Automation projects\\MyFirstAutomationFramework\\Automation\\Tests\\Report\\ExtentScreenshot.html"));
 
                 // attach only HtmlReporter
                 Instance.AttachReporter(htmlReporter);
@@ -39,7 +39,7 @@ namespace AutomationFramework
         private static void CaptureScreenShot(string screenShotName)
         {
             var ss = DriverImplementation.Driver.TakeScreenshot();
-            var captureLocation = $"D:\\MainProjects\\MyFirstAutomationFramework\\Automation\\Tests\\Report\\{screenShotName}";
+            var captureLocation = $"C:\\Automation projects\\MyFirstAutomationFramework\\Automation\\Tests\\Report\\{screenShotName}";
             ss.SaveAsFile(captureLocation, ScreenshotImageFormat.Png);
         }
     }

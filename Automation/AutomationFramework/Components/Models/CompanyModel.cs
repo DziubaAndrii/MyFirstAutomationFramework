@@ -22,20 +22,20 @@
        public static CompanyModel GenerateCompany()
        {
            var companyModel = new CompanyModel();
-           companyModel.Name = Helpers.Helpers.CreateRandomString("AutoCompany");
-           companyModel.Street = Helpers.Helpers.CreateRandomString("AutoStreet");
-           companyModel.Region = Helpers.Helpers.CreateRandomString("AutoRegion");
-           companyModel.City = Helpers.Helpers.CreateRandomString("AutoCity");
-           companyModel.PostalCode = Helpers.Helpers.CreateRandomString("Code");
+           companyModel.Name = Helpers.RandomHelper.CreateRandomString("AutoCompany");
+           companyModel.Street = Helpers.RandomHelper.CreateRandomString("AutoStreet");
+           companyModel.Region = Helpers.RandomHelper.CreateRandomString("AutoRegion");
+           companyModel.City = Helpers.RandomHelper.CreateRandomString("AutoCity");
+           companyModel.PostalCode = Helpers.RandomHelper.CreateRandomString("Code");
            companyModel.Country = "Ukraine";
            companyModel.WebAddress = "www.dmdjdjd.com";
-           companyModel.Phone = Helpers.Helpers.CreateRandomPhone();
-           companyModel.Addtag = Helpers.Helpers.CreateRandomString("AutoAddtag");
+           companyModel.Phone = Helpers.RandomHelper.CreateRandomPhone();
+           companyModel.Addtag = Helpers.RandomHelper.CreateRandomString("AutoAddtag");
            companyModel.Title = "Dr.";
-           companyModel.FirstName = Helpers.Helpers.CreateRandomString("AutoFirstNamedtag");
-           companyModel.LastName = Helpers.Helpers.CreateRandomString("AutoLastName");
+           companyModel.FirstName = Helpers.RandomHelper.CreateRandomString("AutoFirstNamedtag");
+           companyModel.LastName = Helpers.RandomHelper.CreateRandomString("AutoLastName");
            companyModel.JobTitle = "COO";
-           companyModel.DirectTel = Helpers.Helpers.CreateRandomPhone();
+           companyModel.DirectTel = Helpers.RandomHelper.CreateRandomPhone();
            companyModel.Email = "asd@mail.com";
             return companyModel;
 
