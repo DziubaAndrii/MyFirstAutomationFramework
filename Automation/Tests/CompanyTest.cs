@@ -7,6 +7,7 @@ using Framework;
 using Framework.Components.Pages;
 using Framework.Components.Panels;
 using NUnit.Framework;
+using Tests.UserCredentials;
 
 namespace Tests
 {
@@ -87,9 +88,6 @@ namespace Tests
 
         private void Login()
         {
-            var userName = "auto.admin";
-            var password = "welcome1234";
-
             loginPage.SetUserName(userName);
             loginPage.SetPassword(password);
             loginPage.ClickLogin();

@@ -20,6 +20,7 @@ namespace AutomationFramework.Components.Panels
 
         public void clickaddNewLead()
         {
+           WaitForElementIsVisible(10,By.XPath("//i[@class='new-lead-icon glyphicon glyphicon-new-lead']"));
            addNewLead.Click();
         }
 
@@ -34,7 +35,6 @@ namespace AutomationFramework.Components.Panels
             }
         }
 
-        //OpenSubMenu
         public void OpenSubMenu(string menu)
         {
             foreach (var sub in subMenu)

@@ -1,6 +1,8 @@
-﻿using AutomationFramework.Components.Pages;
+﻿using System;
+using AutomationFramework.Components.Pages;
 using AutomationFramework.Components.Panels;
 using Framework.Components.Panels;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
 
@@ -11,7 +13,7 @@ namespace Framework.Components.Pages
         public HeaderPanel HeaderPanel => new HeaderPanel();
 
 
-        [FindsBy(How = How.Id, Using = "HomePage_WelcomeMessage2")]
+        [FindsBy(How = How.Id, Using = "HomePage_WelcomeMessage")]
         private IWebElement welcomeMessage;
 
         public void IsWelcomeMessagePresent()
@@ -23,5 +25,6 @@ namespace Framework.Components.Pages
         {
             return welcomeMessage.Text;
         }
+        
     }
 }
