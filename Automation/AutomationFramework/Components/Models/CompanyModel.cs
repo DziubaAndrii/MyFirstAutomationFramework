@@ -1,10 +1,6 @@
-﻿using AutomationFramework.Components.Enums;
-using AutomationFramework.Components.Helpers;
+﻿using Framework.Components.Helpers;
 
 namespace AutomationFramework.Components.Models
-using Framework.Components.Helpers;
-
-namespace Framework.Components.Models
 {
    public class CompanyModel
    {
@@ -23,26 +19,16 @@ namespace Framework.Components.Models
        public static CompanyModel GenerateCompany()
        {
            var companyModel = new CompanyModel();
-           companyModel.Name = Helpers.RandomHelper.CreateRandomString("AutoCompany");
-           companyModel.Street = Helpers.RandomHelper.CreateRandomString("AutoStreet");
-           companyModel.Region = Helpers.RandomHelper.CreateRandomString("AutoRegion");
-           companyModel.City = Helpers.RandomHelper.CreateRandomString("AutoCity");
-           companyModel.PostalCode = Helpers.RandomHelper.CreateRandomString("Code");
+           companyModel.Name = RandomHelper.CreateRandomString("AutoCompany");
+           companyModel.Street = RandomHelper.CreateRandomString("AutoStreet");
+           companyModel.Region = RandomHelper.CreateRandomString("AutoRegion");
+           companyModel.City = RandomHelper.CreateRandomString("AutoCity");
+           companyModel.PostalCode = RandomHelper.CreateRandomString("Code");
            companyModel.Country = "Ukraine";
            companyModel.WebAddress = $"www.{RandomHelper.CreateRandomAlphabetic(10)}.com";
-           companyModel.Phone = Helpers.RandomHelper.CreateRandomPhone();
-           companyModel.Addtag = Helpers.RandomHelper.CreateRandomString("AutoAddtag");
-           companyModel.Title = "Dr.";
-           companyModel.FirstName = Helpers.RandomHelper.CreateRandomString("AutoFirstNamedtag");
-           companyModel.LastName = Helpers.RandomHelper.CreateRandomString("AutoLastName");
-           companyModel.JobTitle = "COO";
-           companyModel.DirectTel = Helpers.RandomHelper.CreateRandomPhone();
-           companyModel.Email = $"{RandomHelper.CreateRandomAlphaNumeric(8)}@mail.com";
+           companyModel.Phone = RandomHelper.CreateRandomPhone();
+           companyModel.Addtag = RandomHelper.CreateRandomString("AutoAddtag");
             return companyModel;
-
-           return companyModel;
-
-
        }
 
 

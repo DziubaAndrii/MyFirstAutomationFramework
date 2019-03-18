@@ -1,10 +1,7 @@
 ﻿using System;
 using AutomationFramework;
-using Framework;
 using Framework.Components.Pages;
 using NUnit.Framework;
-using System.Configuration;
-using System.Collections.Specialized;
 using Framework.Components.Helpers;
 using Tests.UserCredentials;
 

@@ -3,9 +3,7 @@ using AutomationFramework;
 using AutomationFramework.Components.Models;
 using AutomationFramework.Components.Pages;
 using AutomationFramework.Components.Panels;
-using Framework;
 using Framework.Components.Pages;
-using Framework.Components.Panels;
 using NUnit.Framework;
 using Tests.UserCredentials;
 
@@ -40,7 +38,7 @@ namespace Tests
         {
             var model = CompanyModel.GenerateCompany();
             var contactModel = CompanyContactModel.GenerateContact();
-            Login();
+            Login(Credentials.adminUserName, Credentials.adminPassword);
             headerPanel.clickaddNewLead();
             SetCompanyDetails(model);
             SetCompanyContact(contactModel);
@@ -77,7 +75,7 @@ namespace Tests
 
         private void LoginAndCreateCompany(CompanyModel model, CompanyContactModel contactModel)
         {
-            Login();
+            Login(Credentials.adminUserName, Credentials.adminPassword);
             headerPanel.clickaddNewLead();
             SetCompanyDetails(model);
             SetCompanyContact(contactModel);
@@ -86,7 +84,7 @@ namespace Tests
             Assert.AreEqual(actualCompanyName, model.Name, "Company name is not same that expected");
         }
 
-        private void Login()
+        private void Login(string userName, string password)
         {
             loginPage.SetUserName(userName);
             loginPage.SetPassword(password);

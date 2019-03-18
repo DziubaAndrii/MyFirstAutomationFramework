@@ -2,11 +2,13 @@
 using System.IO;
 using System.Threading;
 using System.Configuration;
+using System.Reflection;
 using AventStack.ExtentReports.Gherkin.Model;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.Html5;
 
 namespace AutomationFramework
 {
@@ -16,8 +18,7 @@ namespace AutomationFramework
         public static ThreadLocal<IWebDriver> driver = new ThreadLocal<IWebDriver>();
         public static IWebDriver Driver => driver.Value;
         public string BrowserName;
-        public static string WorkingDirectory = Directory.GetCurrentDirectory();
-        public static string ProjectDirectory = Directory.GetParent(WorkingDirectory).Parent.FullName;
+        public static string DriversDirectory = Directory.GetParent(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)).Parent?.Parent?.FullName + "\\Drivers";
 
         public DriverImplementation(string browser)
         {
@@ -37,14 +38,15 @@ namespace AutomationFramework
         {
             if (BrowserName.Equals("Chrome"))
             {
-                driver.Value = new ChromeDriver(ProjectDirectory);
+                driver.Value = new ChromeDriver(DriversDirectory);
             }
             else if (BrowserName.Equals("Firefox"))
             {
-                driver.Value = new FirefoxDriver(ProjectDirectory);
+                driver.Value = new FirefoxDriver(DriversDirectory);
             }
             Driver.Manage().Window.Maximize();
         }
+
 
         public static void OpenHomePage()
         {
