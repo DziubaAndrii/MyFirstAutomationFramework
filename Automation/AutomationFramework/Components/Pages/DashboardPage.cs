@@ -1,4 +1,5 @@
 ﻿using AutomationFramework.Components.Pages;
+using AutomationFramework.Components.Panels;
 using Framework.Components.Panels;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;

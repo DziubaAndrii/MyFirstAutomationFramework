@@ -197,7 +197,7 @@ namespace Framework.Components.Pages
         public void ClickSaveGoTo()
         {
             SaveGoTo.Click();
-            WaitForElementIsInvisible(15, By.XPath( "//button [contains( ., 'Save & GoTo') ]"));
+            WaitForElementIsInvisible(25, By.XPath("//button[contains(.,'Save & GoTo') ]"));
         }
     }
 }

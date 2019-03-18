@@ -92,9 +92,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Components\Enums\ContactEnum.cs" />
     <Compile Include="Components\Enums\SubMenu.cs" />
     <Compile Include="Components\Enums\TopMenu.cs" />
-    <Compile Include="Components\Helpers\Helpers.cs" />
+    <Compile Include="Components\Helpers\Utils.cs" />
+    <Compile Include="Components\Models\CompanyContactModel.cs" />
     <Compile Include="Components\Models\CompanyModel.cs" />
     <Compile Include="Components\Pages\AddNewLead.cs" />
     <Compile Include="Components\Pages\BasePage.cs" />

@@ -1,4 +1,4 @@
-﻿namespace Framework.Components.Enums
+﻿namespace AutomationFramework.Components.Enums
 {
         public enum MainMenu
         {

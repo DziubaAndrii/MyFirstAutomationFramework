@@ -1,11 +1,10 @@
 ﻿using System.Collections.Generic;
+using AutomationFramework.Components.Enums;
 using AutomationFramework.Components.Pages;
-using Framework.Components.Enums;
-using Framework.Components.Pages;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
 
-namespace Framework.Components.Panels
+namespace AutomationFramework.Components.Panels
 {
     public class HeaderPanel : BasePage
     {

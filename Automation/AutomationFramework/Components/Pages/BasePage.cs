@@ -1,5 +1,6 @@
 ﻿using System;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.PageObjects;
 using ExpectedConditions = SeleniumExtras.WaitHelpers.ExpectedConditions;
@@ -32,6 +33,12 @@ namespace AutomationFramework.Components.Pages
         public void WaitForSpinner()
         {
             WaitForElementIsInvisible(5, By.ClassName("editableform-loading"));
+        }
+
+        public void EnterAction()
+        {
+            var builder = new Actions(webDriver);
+            builder.SendKeys(Keys.Enter);
         }
     }
 }
