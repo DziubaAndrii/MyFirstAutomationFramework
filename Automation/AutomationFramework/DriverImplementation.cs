@@ -44,12 +44,11 @@ namespace AutomationFramework
                 driver.Value = new FirefoxDriver(ProjectDirectory);
             }
             Driver.Manage().Window.Maximize();
-            // driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
         }
 
         public static void OpenHomePage()
         {
-            Driver.Navigate().GoToUrl("https://fxdb2webauto.monexdev.net/Account/Login.aspx");
+            Driver.Navigate().GoToUrl(ConfigurationManager.AppSettings.Get("basicUrl"));
         }
 
         [TearDown]

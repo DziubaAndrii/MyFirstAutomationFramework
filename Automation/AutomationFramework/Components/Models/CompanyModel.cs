@@ -1,4 +1,6 @@
-﻿namespace Framework.Components.Models
+﻿using Framework.Components.Helpers;
+
+namespace Framework.Components.Models
 {
    public  class CompanyModel
    {
@@ -28,7 +30,7 @@
            companyModel.City = Helpers.RandomHelper.CreateRandomString("AutoCity");
            companyModel.PostalCode = Helpers.RandomHelper.CreateRandomString("Code");
            companyModel.Country = "Ukraine";
-           companyModel.WebAddress = "www.dmdjdjd.com";
+           companyModel.WebAddress = $"www.{RandomHelper.CreateRandomAlphabetic(10)}.com";
            companyModel.Phone = Helpers.RandomHelper.CreateRandomPhone();
            companyModel.Addtag = Helpers.RandomHelper.CreateRandomString("AutoAddtag");
            companyModel.Title = "Dr.";
@@ -36,7 +38,7 @@
            companyModel.LastName = Helpers.RandomHelper.CreateRandomString("AutoLastName");
            companyModel.JobTitle = "COO";
            companyModel.DirectTel = Helpers.RandomHelper.CreateRandomPhone();
-           companyModel.Email = "asd@mail.com";
+           companyModel.Email = $"{RandomHelper.CreateRandomAlphaNumeric(8)}@mail.com";
             return companyModel;
 
 

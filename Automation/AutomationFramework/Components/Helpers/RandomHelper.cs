@@ -26,5 +26,11 @@ namespace Framework.Components.Helpers
             
         }
 
+        public static string CreateRandomAlphabetic(int length)
+        {
+            return new string(Enumerable.Repeat(Alphabetic, length)
+                .Select(s => s[random.Next(s.Length)]).ToArray());
+        }
+
     }
 }

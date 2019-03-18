@@ -5,6 +5,7 @@ using Framework.Components.Models;
 using Framework.Components.Pages;
 using Framework.Components.Panels;
 using NUnit.Framework;
+using Tests.UserCredentials;
 
 namespace Tests
 {
@@ -26,7 +27,7 @@ namespace Tests
         public void SetUp()
         {
             loginPage = new LoginPage();
-            _addNewLead = new AddNewLead();//mistake AddNewLead
+            _addNewLead = new AddNewLead();
             _dashboardPage = new DashboardPage();
             companyPage = new CompanyPage();
             headerPanel = new HeaderPanel();
@@ -36,7 +37,7 @@ namespace Tests
         public void CreateCompanyTest()
         {
             var model = CompanyModel.GenerateCompany();
-            Login();
+            Login(Credentials.adminUserName, Credentials.adminPassword);
             headerPanel.clickaddNewLead();
             SetCompanyDetails(model);
             SetCompanyContact(model);
@@ -49,7 +50,7 @@ namespace Tests
         public void EditCompanyTest()
         {
             var model = CompanyModel.GenerateCompany();
-            Login();
+            Login(Credentials.adminUserName,Credentials.adminPassword);
             headerPanel.clickaddNewLead();
             SetCompanyDetails(model);
             SetCompanyContact(model);
@@ -67,11 +68,8 @@ namespace Tests
         }
 
 
-        private void Login()
+        private void Login(string userName, string password)
         {
-            var userName = "auto.admin";
-            var password = "welcome1234";
-
             loginPage.SetUserName(userName);
             loginPage.SetPassword(password);
             loginPage.ClickLogin();

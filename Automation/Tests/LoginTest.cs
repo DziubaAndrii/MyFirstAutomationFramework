@@ -15,7 +15,8 @@ namespace Tests
     public class LoginTest : DriverImplementation
     {
         [ThreadStatic]private static LoginPage loginPage;
-        
+        [ThreadStatic] private static DashboardPage dashboardPage;
+
         public LoginTest(string browser) : base(browser)
         {
         }
@@ -24,12 +25,13 @@ namespace Tests
         public void SetUp()
         {
             loginPage = new LoginPage();
+            dashboardPage = new DashboardPage();
 
         }
         
 
         [Test]
-        public void IncorrectLogin()
+        public void IncorrectCredentialsLogin()
         {
             var userName = RandomHelper.CreateRandomAlphaNumeric(8);
             var password = RandomHelper.CreateRandomAlphaNumeric(8);
@@ -44,13 +46,16 @@ namespace Tests
         }
 
         [Test]
-        public void CorrectLogin()
+        public void CorrectCredentialsLogin()
         {
             loginPage.SetUserName(Credentials.adminUserName);
             loginPage.SetPassword(Credentials.adminPassword);
             loginPage.ClickLogin();
-            var actualErrorMessage = loginPage.GetErrorMessageText();
-            Assert.AreEqual(actualErrorMessage, "lox", "Error message is not same that expected");
+            dashboardPage.IsWelcomeMessagePresent();
+            var role = Credentials.adminUserName.Replace(".", " ");
+            Assert.True(dashboardPage.GetWelcomeMessage().EndsWith(role));
+            
+
         }
 
     }
